@@ -9,7 +9,7 @@ Very simple image presenter using .NET and WinForms
    ```
 
 ## Usage
-1. Run .\bin\NETImagePresenter.exe
+1. Run NETImagePresenter.exe
 2. Drag and drop image files to the listbox
 3. Remove unwanted files using up/down key and delete key
 4. Clic the listbox to show the selected image, maximized in the selected screen
