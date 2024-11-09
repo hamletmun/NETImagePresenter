@@ -1,0 +1,25 @@
+name: MSBuild
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: windows-2019
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v2
+    - name: Build
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: Csc.exe /debug /target:winexe NETImagePresenter.cs
+    - uses: actions/upload-artifact@v4
+      with:
+        name: NETImagePresenter
+        path: NETImagePresenter.exe
