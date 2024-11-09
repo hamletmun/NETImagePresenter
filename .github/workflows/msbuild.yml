@@ -18,7 +18,7 @@ jobs:
       uses: microsoft/setup-msbuild@v2
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\Roslyn\csc.exe" /debug /target:winexe NETImagePresenter.cs
+      run: \"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\Roslyn\csc.exe\" /debug /target:winexe NETImagePresenter.cs
     - uses: actions/upload-artifact@v4
       with:
         name: NETImagePresenter
