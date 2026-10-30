@@ -10,14 +10,14 @@ jobs:
 
   build:
 
-    runs-on: windows-2019
+    runs-on: windows-2022
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7.0.1
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: '& "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\Roslyn\csc.exe" /target:winexe NETImagePresenter.cs'
-    - uses: actions/upload-artifact@v4
+      run: '& "C:\Program Files (x86)\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\Roslyn\csc.exe" /target:winexe NETImagePresenter.cs'
+    - uses: actions/upload-artifact@v7.0.2
       with:
         name: NETImagePresenter
         path: NETImagePresenter.exe
